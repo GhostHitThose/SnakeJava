@@ -1,4 +1,4 @@
-package gamefiles;
+package com.maxrenner.gamefiles;
 
 import java.awt.*;
 
@@ -26,6 +26,16 @@ public class Head extends GameObject {
     public void changeDirection(char direction){this.direction = direction;}
     public char getDirection(){return direction;}
     public void setSpeed(int speed){this.speed = speed;}
+
+    public int checkCollision(Apple apple, int windowW, int windowH){
+        if(getX() == apple.getX() && getY() == apple.getY()){
+            return 1;
+        }
+        if(getX() < 0 || getX() > windowW || getY() < 0 || getY() > windowH){
+            return 2;
+        }
+        return 0;
+    }
 
     @Override
     public void draw(Graphics2D g) {

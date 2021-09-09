@@ -1,6 +1,6 @@
-package frame;
+package com.maxrenner.frame;
 
-import gamefiles.Game;
+import com.maxrenner.gamefiles.Game;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,10 +10,9 @@ import java.awt.event.KeyEvent;
 public class FrameBuilder extends JFrame implements FrameVariables {
     public void build(Game game){
         setTitle(TITLE);
-        setPreferredSize(new Dimension(S_WIDTH, S_HEIGHT));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-
+        setLayout(new BorderLayout());
         add(game);
         addKeyListener(new KeyAdapter(){
             @Override
@@ -25,5 +24,10 @@ public class FrameBuilder extends JFrame implements FrameVariables {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    @Override
+    public Dimension getPreferredSize(){
+        return new Dimension(S_WIDTH, S_HEIGHT);
     }
 }

@@ -1,12 +1,12 @@
-package gamefiles;
+package com.maxrenner.gamefiles;
 
 import java.awt.*;
 
 public abstract class GameObject {
     private int x, y, width, height;
+    public abstract void draw(Graphics2D g);
     public void move(){}
     public void move(int headX, int headY){}
-    public abstract void draw(Graphics2D g);
 
     public int getX(){return x;}
     public int getY(){return y;}

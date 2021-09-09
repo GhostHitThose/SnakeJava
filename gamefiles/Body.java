@@ -1,4 +1,4 @@
-package gamefiles;
+package com.maxrenner.gamefiles;
 
 import java.awt.*;
 
